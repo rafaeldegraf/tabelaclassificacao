@@ -1,4 +1,4 @@
-if (typeof tabelaJogadores !== 'null'){
+if (typeof tabelaJogadores == 'null'){
 var paulo = {
   nome: "Paulo",
   vitorias: 2,
