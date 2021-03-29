@@ -1,3 +1,4 @@
+
 var paulo = {
   nome: "Paulo",
   vitorias: 2,
@@ -73,7 +74,4 @@ function adicionarDerrota(i){
   jogador.derrotas = 0
   jogador.pontos = 0
   exibirJogadoresNaTela(jogadores)
-   // var jogador = jogadores[i]
-  // jogador.derrotas++
-  // exibirJogadoresNaTela(jogadores)
 }
