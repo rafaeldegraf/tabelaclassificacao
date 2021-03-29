@@ -1,5 +1,5 @@
   var tabelaJogadores = document.getElementById("tabelaJogadores")
-  tabelaJogadores.innerHTML = html
+
 
 var paulo = {
   nome: "Paulo",
@@ -41,7 +41,7 @@ function exibirJogadoresNaTela(jogadores){
     html += "<td><button onClick='adicionarDerrota(" + i + ")'>Derrota</button></td>"
     html += "<td><button onClick='zerarPlacar(" + i + ")'>Zerar</button></td></tr>"
   }
-
+  tabelaJogadores.innerHTML = html
 }
 
 function adicionarVitoria(i){
