@@ -1,4 +1,6 @@
-if (typeof tabelaJogadores == 'null'){
+  var tabelaJogadores = document.getElementById("tabelaJogadores")
+  tabelaJogadores.innerHTML = html
+
 var paulo = {
   nome: "Paulo",
   vitorias: 2,
@@ -39,8 +41,7 @@ function exibirJogadoresNaTela(jogadores){
     html += "<td><button onClick='adicionarDerrota(" + i + ")'>Derrota</button></td>"
     html += "<td><button onClick='zerarPlacar(" + i + ")'>Zerar</button></td></tr>"
   }
-  var tabelaJogadores = document.getElementById("tabelaJogadores")
-  tabelaJogadores.innerHTML = html
+
 }
 
 function adicionarVitoria(i){
@@ -74,5 +75,4 @@ function adicionarDerrota(i){
   jogador.derrotas = 0
   jogador.pontos = 0
   exibirJogadoresNaTela(jogadores)
-}
 }
