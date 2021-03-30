@@ -1,32 +1,18 @@
+ var jogadores = []
   
-var paulo = {
-  nome: "Paulo",
-  vitorias: 2,
-  empates: 5,
-  derrotas: 1,
-  pontos: 0
+  for (var i = 0; i < jogadores.length; i++) {
+  
+  jogadores[i].pontos = calculaPontos(jogadores[i])
 }
-var rafa = {
-  nome: "Rafa",
-  vitorias: 3,
-  empates: 5,
-  derrotas: 2,
-  pontos: 0
-}
-
-rafa.pontos = calculaPontos(rafa)
-paulo.pontos = calculaPontos(paulo)
+  imprimeNaTela(jogadores)
 
 function calculaPontos(jogador) {
   var pontos = (jogador.vitorias * 3) + jogador.empates
   return pontos
 }
 
-var jogadores = [rafa, paulo]
 
-exibirJogadoresNaTela(jogadores)
-
-function exibirJogadoresNaTela(jogadores){
+function imprimeNaTela(jogadores){
   var html = ""
   for(var i=0; i< jogadores.length; i++){
     html += "<tr><td>" + jogadores[i].nome + "</td>"
@@ -48,7 +34,7 @@ function adicionarVitoria(i){
   var jogador = jogadores[i]
   jogador.vitorias = jogador.vitorias + 1
   jogador.pontos = calculaPontos(jogador)
-  exibirJogadoresNaTela(jogadores)
+  imprimeNaTela(jogadores)
 }
 function adicionarEmpate(i){
   //console.log("clicou no botao empate")
@@ -56,7 +42,7 @@ function adicionarEmpate(i){
     var jogador = jogadores[i]
     jogador.empates++
     jogador.pontos = calculaPontos(jogador)
-    exibirJogadoresNaTela(jogadores)
+    imprimeNaTela(jogadores)
   }
   
 }
@@ -64,8 +50,49 @@ function adicionarDerrota(i){
   //console.log("clicou no botao derrota")
   var jogador = jogadores[i]
   jogador.derrotas++
-  exibirJogadoresNaTela(jogadores)
+  imprimeNaTela(jogadores)
 }
+
+  function criaJogador(nome){
+  return (player = {
+    nome: nome,
+    vitorias: 0,
+    empates: 0,
+    derrotas: 0,
+    pontos: 0 })
+  }
+  
+//jogadorNovo.nome = adicionaJogador(jogadorNovo)
+
+
+function addPlayer() {
+  var nomedoJogador = document.getElementById('addPlayer').value
+  if (nomedoJogador == ""){
+    alert("Insira um nome antes de adicionar")
+  } 
+  else {
+    jogadores.push(criaJogador(nomedoJogador))
+    imprimeNaTela(jogadores)
+    document.getElementById('addPlayer').value = ""
+  }
+  
+ }
+
+
+
+
+
+
+
+//ver
+
+//jogadores.push(jogadorNovo)
+//jogadores.push(nomeJogador)
+imprimeNaTela(jogadores)
+
+
+
+
  function zerarPlacar(i){
   //console.log("clicou no botao zerar")
   var jogador = jogadores[i]
@@ -73,5 +100,6 @@ function adicionarDerrota(i){
   jogador.empates = 0 
   jogador.derrotas = 0
   jogador.pontos = 0
-  exibirJogadoresNaTela(jogadores)
+  imprimeNaTela(jogadores)
 }
+
