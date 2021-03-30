@@ -4,13 +4,16 @@
     <title>
         Imersão Dev - Aula 06
     </title>
-    <link href="https://rafaeldegraf.github.io/tabelaclassificacao/styles.css" rel="stylesheet" />
-    <script src="https://rafaeldegraf.github.io/tabelaclassificacao/scripts.js"> </script> 
 </head>
 
 <body>
     <h1>Tabela de classificação</h1>
-
+<div class="card">
+  <label class="input">
+      <input type="text" placeholder="Nome do Jogador" id="addPlayer" class=" ">
+   </label>
+  <button class="addPlayer" onClick="addPlayer()">Adicionar Jogador</button>
+    </div>
     <table style="width:100%">
         <thead>
             <tr>
@@ -20,7 +23,7 @@
                 <th>Derrotas</th>
                 <th>Pontos</th>
                 <th>Ações</th>
-                <td><button onClick="adicionaJogador()">Novo Jogador</button></td>
+<!--                 <td><button onClick="adicionaJogador()">Novo Jogador</button></td> -->
             </tr>
         </thead>
         <tbody id="tabelaJogadores">
